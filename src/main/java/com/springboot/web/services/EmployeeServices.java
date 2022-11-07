@@ -1,5 +1,7 @@
 package com.springboot.web.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class EmployeeServices {
 	public Employee addEmployee(Employee employee){
 		employeeRepository.save(employee);
 		return employee;
+	}
+	
+	//get all the Employee
+	public List<Employee> getAllEmployee(){
+		return this.employeeRepository.findAll();
 	}
    
 	
